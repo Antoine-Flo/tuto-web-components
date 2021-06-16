@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script defer src="app.js"></script>
+    <script defer src="web-components.js"></script>
+    <script defer src="card.js"></script>
     <title>WebComponents Tuto</title>
 </head>
 
@@ -14,14 +16,14 @@
 
 
     <!-- Custom Element -->
-    
+
     <!-- <col-container>
         <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, dolores neque doloremque est excepturi distinctio libero odit eaque placeat odio molestias magnam tempora, ratione laudantium ea quae, itaque non tempore!</div>
         <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti quia culpa laboriosam itaque sint in sequi nemo soluta omnis libero iure tenetur facere, incidunt, ratione consectetur sunt doloribus eligendi atque.</div>
         <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur voluptatibus culpa eaque eius cumque qui unde, ex delectus cupiditate at consequuntur accusamus quasi. Quis nulla dolore ea officiis itaque minus!</div>
     </col-container> -->
 
-    
+
     <!-- Template -->
 
     <!-- <template id="text">
@@ -37,11 +39,34 @@
 
 
     <!-- All Together -->
+
+    <!-- <news-article photo="https://www.legorafi.fr/wp-content/uploads/2021/06/iStock-1204066065.jpg"> -->
+
     <col-container>
-        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, dolores neque doloremque est excepturi distinctio libero odit eaque placeat odio molestias magnam tempora, ratione laudantium ea quae, itaque non tempore!</div>
-        <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti quia culpa laboriosam itaque sint in sequi nemo soluta omnis libero iure tenetur facere, incidunt, ratione consectetur sunt doloribus eligendi atque.</div>
-        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur voluptatibus culpa eaque eius cumque qui unde, ex delectus cupiditate at consequuntur accusamus quasi. Quis nulla dolore ea officiis itaque minus!</div>
+    
+        <news-article title="Un élève de CM1 découvre qu’il a 22 ans en regardant au fond d’un verre Duralex">
+            <div slot="content">Depuis midi, les journalistes affluent autour de la modeste école primaire située dans
+                la
+                banlieue Nantaise. La raison de cette agitation : un élève affirmant avoir découvert être âgé de 22 ans
+                après avoir regardé dans le fond d’un verre Duralex.</div>
+        </news-article>
+
+        <news-article title="Un élève de CM1 découvre qu’il a 22 ans en regardant au fond d’un verre Duralex">
+            <div slot="content">Depuis midi, les journalistes affluent autour de la modeste école primaire située dans
+                la
+                banlieue Nantaise. La raison de cette agitation : un élève affirmant avoir découvert être âgé de 22 ans
+                après avoir regardé dans le fond d’un verre Duralex.</div>
+        </news-article>
+
+        <news-article title="Un élève de CM1 découvre qu’il a 22 ans en regardant au fond d’un verre Duralex">
+            <div slot="content">Depuis midi, les journalistes affluent autour de la modeste école primaire située dans
+                la
+                banlieue Nantaise. La raison de cette agitation : un élève affirmant avoir découvert être âgé de 22 ans
+                après avoir regardé dans le fond d’un verre Duralex.</div>
+        </news-article>
+
     </col-container>
+
 
 </body>
 

@@ -3,20 +3,20 @@
 /// Custom Element ///
 //////////////////////
 
-// class ColContainer extends HTMLElement {
+class ColContainer extends HTMLElement {
 
-//     constructor() {
-//         super(); // Prototype Chain (call it's parent constructor)
+    constructor() {
+        super(); // Prototype Chain (call it's parent constructor)
 
-//         const cols = this.querySelectorAll('div');
-//         this.style.display = 'grid';
-//         this.style.margin = '0 auto';
-//         this.style.width = 'clamp(320px, 80vw, 800px)';
-//         this.style.gridTemplateColumns = `repeat(${cols.length}, 1fr)`;
-//     }
-// }
+        const cols = this.querySelectorAll('div');
+        this.style.display = 'grid';
+        this.style.margin = '0 auto';
+        this.style.width = 'clamp(320px, 80vw, 800px)';
+        this.style.gridTemplateColumns = `repeat(${cols.length}, 1fr)`;
+    }
+}
 
-// window.customElements.define('col-container', ColContainer);
+window.customElements.define('col-container', ColContainer);
 
 /////////////////////// 
 ////// Template //////
@@ -48,19 +48,43 @@
 //////////////////////
 
 const template = document.createElement('template');
+template.innerHTML = `
+    <style>
+        h2 {
+            color: deepblue;
+        }
 
+        p {
+            color: grey;
+        }
 
-class ColContainer extends HTMLElement {
+        div {
+            padding: 1rem;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+        }
+    
+    </style>
+
+    <div>
+        <h2><slot name="title"></slot></h2>
+        <p><slot name="content">My default text</slot></p>
+    </div>
+
+    <img></img>
+`
+
+class NewsArticle extends HTMLElement {
 
     constructor() {
-        super(); // Prototype Chain (call it's parent constructor)
+        super(); 
 
-        const cols = this.querySelectorAll('div');
-        this.style.display = 'grid';
-        this.style.margin = '0 auto';
-        this.style.width = 'clamp(320px, 80vw, 800px)';
-        this.style.gridTemplateColumns = `repeat(${cols.length}, 1fr)`;
+        this.attachShadow({ mode : 'open' });
+        // const root = this.shadowRoot
+
+        this.shadowRoot.appendChild(template.content.cloneNode(true));
+
+        this.shadowRoot.querySelector('h2').innerText = this.getAttribute('title');
     }
 }
 
-window.customElements.define('col-container', ColContainer);
+window.customElements.define('news-article', NewsArticle);
